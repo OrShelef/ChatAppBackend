@@ -38,7 +38,7 @@ messages={};
 console.log("connected");
 client.connect(err=>{});
 
-io.on("connection", socket => {
+/*io.on("connection", socket => {
    
 
     socket.on("disconnected",()=>client.close());
@@ -51,7 +51,7 @@ io.on("connection", socket => {
     });
 
    
-  });
+  });*/
 
   app.route('/api/Users/AddUser/').post((req,res)=>{
     console.log(req.body);
