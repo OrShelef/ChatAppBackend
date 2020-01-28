@@ -111,7 +111,7 @@ io.on("connection", socket => {
     });   
  });
  //app.all('*', (req, res) =>  res.status(200).sendFile((path.join(__dirname,'../../dist/TodosApp/index.html'))));
-https.listen(8080, () => {
+https.listen(4444, () => {
   console.log('Listening...')
 })
 console.log((path.join(__dirname,'../../dist/TodosApp/index.html')));
