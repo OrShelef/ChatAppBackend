@@ -1,8 +1,9 @@
 
 const path = require("path");
 const app = require('express')();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+const https = require('https');
+const fs=require('fs');
+const io = require('socket.io')(https);
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://admin:admin@cluster0-daweo.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true,useUnifiedTopology: true });
@@ -105,7 +106,12 @@ io.on("connection", socket => {
     });   
  });
  //app.all('*', (req, res) =>  res.status(200).sendFile((path.join(__dirname,'../../dist/TodosApp/index.html'))));
-app.listen(8080);
+ https.createServer({
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+}, app).listen(3000, () => {
+  console.log('Listening...')
+})
 console.log((path.join(__dirname,'../../dist/TodosApp/index.html')));
 
  
