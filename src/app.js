@@ -67,6 +67,13 @@ io.on("connection", socket => {
     collection.insertMany(requestedId);
     res.send(requestedId);
   });
+  app.route('/api/SendMessage/').post((req,res)=>{
+    console.log(req.body);
+    const requestedId = req.body;    
+    const collection = client.db("ChatApp").collection("Messages");       
+    collection.insertOne(requestedId);
+    res.send(requestedId);
+  });
   app.route('/api/Users/GetUser/:id').get((req, res) =>
   {
     const requestedId = req.params['id']         
