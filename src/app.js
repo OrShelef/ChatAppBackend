@@ -109,7 +109,7 @@ io.on("connection", socket => {
  https.createServer({
   key: fs.readFileSync('server.key'),
   cert: fs.readFileSync('server.cert')
-}, app).listen(3000, () => {
+}, app).listen(8080, () => {
   console.log('Listening...')
 })
 console.log((path.join(__dirname,'../../dist/TodosApp/index.html')));
