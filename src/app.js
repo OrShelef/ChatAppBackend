@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'https://orshelef.github.io/ChatAppAngular/');
+  res.setHeader('Access-Control-Allow-Origin', 'https://orshelef.github.io/');
 
   
 
